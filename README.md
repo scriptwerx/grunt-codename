@@ -1,13 +1,3 @@
-Project:	grunt-codename
-
-Author:		[scriptwerx](mailto:enquiries@scriptwerx.co.uk)
-
-Version:	0.0.4
-
-&nbsp;
-___
-
-
 # [grunt-codename](id:mainTitle)
 
 Utility to include a codename for your application based on version.
