@@ -171,6 +171,7 @@ See the [LICENSE][] distributed with the project.
 ___
 
 [grunt]: http://gruntjs.com/
+[GruntFile]: http://gruntjs.com/sample-gruntfile
 [Getting Started]: http://gruntjs.com/getting-started
 [grunt-bumpx]: https://github.com/Ragnarokkr/grunt-bumpx/
 [SemVer]: http://semver.org/
