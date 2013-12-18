@@ -14,6 +14,8 @@ Utility to include a codename for your application based on version.
 
 This works great alongside version bump utility: [grunt-bumpx][] for keeping your version numbers and names up-to-date with each build.
 
+Included codenames and patchNames created with the help of the excellent [codenamegenerator.com][] website.
+
 ## Getting started
 
 This plugin requires Grunt `~0.4.1`
@@ -173,6 +175,7 @@ ___
 [grunt-bumpx]: https://github.com/Ragnarokkr/grunt-bumpx/
 [SemVer]: http://semver.org/
 [LICENSE]: LICENSE-MIT
+[codenamegenerator.com]: http://www.codenamegenerator.com
 
 
 
