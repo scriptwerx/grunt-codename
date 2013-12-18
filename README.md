@@ -20,7 +20,7 @@ Included codenames and patchNames created with the help of the excellent [codena
 
 This plugin requires Grunt `~0.4.1`
 
-If you haven't used [Grunt][grunt] before, be sure to check out the [Getting Started][getting-started] guide, as it explains how to create a [Gruntfile][] as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [Gruntfile][] as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-codename --save-dev
