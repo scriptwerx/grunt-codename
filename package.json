@@ -1,0 +1,50 @@
+{
+	"name": "grunt-codename",
+	"description": "Utility to include a codename for your application based on version.",
+	"version": "0.0.4",
+	"codename": "Perseus Amber",
+	"patchName": "Tayra",
+	"homepage": "https://github.com/scriptwerx/grunt-codename",
+	"author": {
+		"name": "Paul Massey",
+		"email": "paul.massey@scriptwerx.co.uk",
+		"url": "http://www.scriptwerx.co.uk"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/scriptwerx/grunt-codename.git"
+	},
+	"bugs": {
+		"url": "https://github.com/scriptwerx/grunt-codename/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/scriptwerx/grunt-codename/blob/master/LICENSE"
+		}
+	],
+	"main": "Gruntfile.js",
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"peerDependencies": {
+		"grunt": "~0.4.1"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-bumpx": "~0.1.4"
+	},
+	"keywords": [
+		"gruntplugin",
+		"package",
+		"version",
+		"number",
+		"codename"
+	],
+	"dependencies": {
+		
+	}
+}
