@@ -32,9 +32,9 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-codename');
 ```
 
-**N.B.**
+The project follows the [SemVer][] guidelines for version numbers.
 
-The project follows the [SemVer][] guidelines for version numbers but only supports single-digit for major, minor and patch.
+**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
 
 ## The "codename" task
 
@@ -54,7 +54,9 @@ grunt.initConfig({
 })
 ```
 
-**codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines but currently only single-digit for major, minor and patch.
+**codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines.
+
+**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
 
 ### Example JSON
 
@@ -125,7 +127,9 @@ Any contribution to improve the project and/or expand it is welcome.
 
 If you're interested in contributing to this project, take care to maintain the existing coding style.
 
-The project follows the [SemVer][] guidelines for version numbers but currently only supports single-digit for major, minor and patch.
+The project follows the [SemVer][] guidelines for version numbers.
+
+**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
 
 To contribute:
 
@@ -140,6 +144,11 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 ## Changelog
 
 Changes, bug fixes and enhancements made to grunt-codename.
+
+### grunt-codename v0.0.5
+
+* [ENHANCEMENT] **codename** is no longer restricted to only single-digit for major, minor and patch parts of the version field.
+	* Supplied codenames and patchnames have not been updated so still only support single-digit for major, minor and patch by default.
 
 ### grunt-codename v0.0.4
 
