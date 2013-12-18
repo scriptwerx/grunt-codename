@@ -79,7 +79,7 @@ Running the task in this way, the `codename` and `patchName` fields of each trag
 
 ```javascript
 grunt.initConfig({
-    bump: {
+    codename: {
         options: {
             patch: true,
             data: grunt.file.readJSON ("codenames.json")
