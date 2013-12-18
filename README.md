@@ -54,6 +54,34 @@ grunt.initConfig({
 
 **codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines but currently only single-digit for major, minor and patch.
 
+### Example JSON
+
+**codename** is designed to update your *package.json*, *manifest.json* or any other JSON file with a *"version"* field (configured as noted above).
+
+An example of a *manifest.json* file is below:
+
+```json
+{
+	"name": "My Test Application",
+	"version": "1.3.2-16",
+	"codename": "",
+	"patchName": "",
+	"description": "A test application for me."
+}
+```
+
+Once **codename** has been used (with patchNames enabled); the *manifest.json* file would be updated automatically as follows:
+
+```json
+{
+	"name": "My Test Application",
+	"version": "1.3.2-16",
+	"codename": "Honiara Nimitz",
+	"patchName": "Ithomiid",
+	"description": "A test application for me."
+}
+```
+
 ### Options
 
 options.* | Type | Default | Description
