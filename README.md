@@ -24,7 +24,7 @@ grunt.loadNpmTasks('grunt-codename');
 
 The project follows the [SemVer][] guidelines for version numbers.
 
-**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
+**N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ## The "codename" task
 
@@ -46,7 +46,7 @@ grunt.initConfig({
 
 **codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines.
 
-**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
+**Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ### Example JSON
 
@@ -116,10 +116,6 @@ grunt.initConfig({
 Any contribution to improve the project and/or expand it is welcome.
 
 If you're interested in contributing to this project, take care to maintain the existing coding style.
-
-The project follows the [SemVer][] guidelines for version numbers.
-
-**N.B. The supplied codenames and patchNames only include suport for single-digit for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't hanlde this restriction (but that's a lot of names)!**
 
 To contribute:
 
