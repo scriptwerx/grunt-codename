@@ -22,7 +22,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-codename');
 ```
 
-The project follows the [SemVer][] guidelines for version numbers.
+The project follows the [SemVer][] guidelines for version numbers; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
 **N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
@@ -44,7 +44,7 @@ grunt.initConfig({
 })
 ```
 
-**codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines.
+**codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
 **Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
@@ -133,30 +133,40 @@ Changes, bug fixes and enhancements made to grunt-codename.
 
 ### grunt-codename v0.0.5
 
+**"Perseus Amber" (Uromastix)**
+
 * [ENHANCEMENT] **codename** is no longer restricted to only single-digit for major, minor and patch parts of the version field.
 	* Supplied codenames and patchnames have not been updated so still only support single-digit for major, minor and patch by default.
 
 ### grunt-codename v0.0.4
+
+**"Perseus Amber" (Tayra)**
 
 * [ENHANCEMENT] Included this *README.md*.
 * [ENHANCEMENT] Updated documentation.
 
 ### grunt-codename v0.0.3
 
+**"Perseus Amber" (Pangolin)**
+
 * [ENHANCEMENT] Moved codenames and patchNames to external JSON file.
 * [FEATURE] Added options to allow for better configuration.
 
 ### grunt-codename v0.0.2
 
-**Do not use**
+**"Perseus Amber" (Ithomiid)**
 
 * [BUGFIX] Fixed issue with codename.
 
+**Do not use!**
+
 ### grunt-codename v0.0.1
 
-**Do not use**
+**"Perseus Amber" (Saiga)**
 
 * Initial commit.
+
+**Do not use!**
 
 ## License
 See the [LICENSE][] distributed with the project.
