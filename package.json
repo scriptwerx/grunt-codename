@@ -38,6 +38,9 @@
 		"grunt-bumpx": "~0.1.4"
 	},
 	"keywords": [
+		"scriptwerx"
+		"grunt",
+		"plugin",
 		"gruntplugin",
 		"package",
 		"version",
