@@ -189,7 +189,7 @@ ___
 [Getting Started]: http://gruntjs.com/getting-started
 [grunt-bumpx]: https://github.com/Ragnarokkr/grunt-bumpx/
 [SemVer]: http://semver.org/
-[LICENSE]: LICENSE-MIT
+[LICENSE]: https://github.com/scriptwerx/grunt-codename/blob/master/LICENSE-MIT
 [codenamegenerator.com]: http://www.codenamegenerator.com
 
 
