@@ -1,7 +1,12 @@
-/**
- * GruntFile.js
- * @author  Paul Massey
- */
+/*
+* GruntFile.js example.
+* 
+* grunt-codename
+* https://github.com/scriptwerx/grunt-codename
+*
+* Copyright (c) 2013 scriptwerx
+* Licensed under the MIT license.
+*/
 
 var testJSON = "test.json";
 
