@@ -26,8 +26,6 @@ module.exports = function (grunt) {
 	function getVersionData (p_version) {
 		versionData = p_version.split (".");
 		versionData.push (versionData.pop ().split ("-"));
-
-		grunt.log.writeln ("versionData: " + versionData + ", " + versionData[0] + "." + versionData[1]);
 	}
 
 	/**
