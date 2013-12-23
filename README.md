@@ -139,7 +139,7 @@ Changes, bug fixes and enhancements made to grunt-codename.
 * [ENHANCEMENT] Updated the demo *GruntFile.js* (included) to demonstrate our own *autoGrunt* method which ensures that single-digit bump occurs when using the utility.
 	* When using the configuration as per our demo *GruntFile.js* bumping the *patch* part of the version will automatically switch to the *minor* part of the version and in-turn the *major* part of the version. For example (always bumping *patch*):
 		* Version `0.8.8-12` becomes `0.8.9-0` which in turn becomes `0.9.0-0`.
-		* Version `0.9.8-12` becomes `0.9.9-00` which in turn becomes `1.0.0-00`.
+		* Version `0.9.8-12` becomes `0.9.9-0` which in turn becomes `1.0.0-0`.
 		
 For more information, please see the included [GruntFile.js](https://github.com/scriptwerx/grunt-codename/blob/master/Gruntfile.js).
 
