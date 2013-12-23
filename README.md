@@ -158,15 +158,11 @@ Changes, bug fixes and enhancements made to grunt-codename.
 
 * [BUGFIX] Fixed issue with codename.
 
-**Do not use!**
-
 ### grunt-codename v0.0.1
 
 **"Perseus Amber" (Saiga)**
 
 * Initial commit.
-
-**Do not use!**
 
 ## License
 See the [LICENSE][] distributed with the project.
