@@ -1,6 +1,6 @@
 # [grunt-codename](id:mainTitle)
 
-Utility to include a codename for your application based on version.
+Utility to include a codename for your application based on version (up-to v5.X.X-X).
 
 This works great alongside version bump utility: [grunt-bumpx][] for keeping your version numbers and names up-to-date with each build.
 
@@ -24,7 +24,7 @@ grunt.loadNpmTasks('grunt-codename');
 
 The project follows the [SemVer][] guidelines for version numbers; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
-**N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
+**N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field (and major to only 5) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ## The "codename" task
 
@@ -46,7 +46,7 @@ grunt.initConfig({
 
 **codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
-**Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
+**Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field (and major to only 5) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ### Example JSON
 
@@ -131,12 +131,25 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.0.6
+
+**"Perseus Amber" (Anoa)**
+
+* [ENHANCEMENT] Updated this documentation a little to make the current version restrictions clear.
+* [ENHANCEMENT] Updated the demo *GruntFile.js* (included) to demonstrate our own *autoGrunt* method which ensures that single-digit bump occurs when using the utility.
+	* When using the configuration as per our demo *GruntFile.js* bumping the *patch* part of the version will automatically switch to the *minor* part of the version and in-turn the *major* part of the version. For example (always bumping *patch*):
+		* Version `0.8.8-12` becomes `0.8.9-0` which in turn becomes `0.9.0-0`.
+		* Version `0.9.8-12` becomes `0.9.9-00` which in turn becomes `1.0.0-00`.
+		
+For more information, please see the included [GruntFile.js](https://github.com/scriptwerx/grunt-codename/blob/master/Gruntfile.js).
+
 ### grunt-codename v0.0.5
 
 **"Perseus Amber" (Uromastix)**
 
-* [ENHANCEMENT] **codename** is no longer restricted to only single-digit for major, minor and patch parts of the version field.
-	* Supplied codenames and patchnames have not been updated so still only support single-digit for major, minor and patch by default.
+* [ENHANCEMENT] Included this *README.md*.
+* [ENHANCEMENT] Updated documentation.
+
 
 ### grunt-codename v0.0.4
 

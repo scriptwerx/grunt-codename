@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2013 scriptwerx
  * Licensed under the MIT license.
- * @version 0.0.5 "Perseus Amber" (Uromastix)
+ * @version 0.0.6 "Perseus Amber" (Anoa)
  */
 
 /* jslint todo: true, white: true */

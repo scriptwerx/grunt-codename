@@ -3,28 +3,55 @@
  * @author  Paul Massey
  */
 
+var testJSON = "test.json";
+
 module.exports = function (grunt)
 {
+	/**
+	 * Ensures single-digit bump occurs
+	 * @param part
+	 * @returns {string}
+	 */
+
+	function autoBump (part) {
+
+		if (part === "build") return ["bump:" + part];
+		
+		var pkg = grunt.file.readJSON (testJSON),
+			versionData = pkg.version.split (".");
+		
+		if (part === "patch" && parseInt (versionData[2], 10) + 1 >= 10) part = "minor";
+		if (part === "minor" && parseInt (versionData[1], 10) + 1 >= 10) part = "major";
+		
+		return part;
+	}
+
 	grunt.initConfig ({
-		pkg: grunt.file.readJSON ("test.json"),
+		pkg: grunt.file.readJSON (testJSON),
 		bump: {
 			build: {
 				options: {
 					part: "build"
 				},
-				src: ["test.json"]
+				src: [testJSON]
 			},
 			patch: {
 				options: {
-					part: "patch"
+					part: autoBump ("patch", pkg)
 				},
-				src: ["test.json"]
+				src: [testJSON]
 			},
 			minor: {
 				options: {
-					part: "minor"
+					part: autoBump ("minor", pkg)
 				},
-				src: ["test.json"]
+				src: [testJSON]
+			},
+			major: {
+				options: {
+					part: "major"
+				},
+				src: [testJSON]
 			}
 		},
 		codename: {
@@ -33,14 +60,14 @@ module.exports = function (grunt)
 					patch: true,
 					data: grunt.file.readJSON ("codenames.json")
 				},
-				src: ["test.json"]
+				src: [testJSON]
 			}
 		}
 	});
-	
+
 	grunt.loadNpmTasks ("grunt-bumpx");
 	grunt.loadNpmTasks ("grunt-codename");
 
 	// Default - Check code, concat, uglify and bump the build version.
-	grunt.registerTask ("default", ["bump:patch", "bump:build", "codename"]);
+	grunt.registerTask ("default", ["bump:patch", "codename"]);
 };
