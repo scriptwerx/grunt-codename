@@ -131,6 +131,13 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.0.7
+
+**"Perseus Amber" (Malbrouck)**
+
+* [BUGFIX] Fixed issue that caused *patchName* to stop functioning correctly.
+
+
 ### grunt-codename v0.0.6
 
 **"Perseus Amber" (Anoa)**

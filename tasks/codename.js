@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2013 scriptwerx
  * Licensed under the MIT license.
- * @version 0.0.6 "Perseus Amber" (Anoa)
+ * @version 0.0.7 "Perseus Amber" (Malbrouck)
  */
 
 /* jslint todo: true, white: true */
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
 	function getVersionData (p_version) {
 		versionData = p_version.split (".");
-		versionData.push (versionData.pop ().split ("-"));
+		versionData.push (versionData.pop ().split ("-")[0]);
 	}
 
 	/**
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 				patch: false,
 				data: undefined,
 				patchNames: undefined,
-				codeNames: undefined
+				codenames: undefined
 			});
 
 		if (options.data !== undefined)
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
 		}
 		else
 		{
-			codeNames = (options.codeNames !== undefined) ? options.codeNames : data.codeNames;
+			codeNames = (options.codenames !== undefined) ? options.codenames : data.codeNames;
 			patchNames = (options.patchNames !== undefined) ? options.patchNames : data.patchNames;
 		}
 
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
 					oldName = f.codename,
 					newName = getCodeName (f.version),
 					oldPatchName = f.patchName,
-					patchName = options.patch ? getPatchName (f.version) : "",
+					patchName = getPatchName (f.version),
 					patchUpdated = false;
 
 				if (oldName !== newName) {
