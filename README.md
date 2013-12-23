@@ -136,7 +136,7 @@ Changes, bug fixes and enhancements made to grunt-codename.
 **"Perseus Amber" (Anoa)**
 
 * [ENHANCEMENT] Updated this documentation a little to make the current version restrictions clear.
-* [ENHANCEMENT] Updated the demo *GruntFile.js* (included) to demonstrate our own *autoGrunt* method which ensures that single-digit bump occurs when using the utility.
+* [ENHANCEMENT] Updated the demo *GruntFile.js* (included) to demonstrate our own *autoBump* method which ensures that single-digit bump occurs when using the utility.
 	* When using the configuration as per our demo *GruntFile.js* bumping the *patch* part of the version will automatically switch to the *minor* part of the version and in-turn the *major* part of the version. For example (always bumping *patch*):
 		* Version `0.8.8-12` becomes `0.8.9-0` which in turn becomes `0.9.0-0`.
 		* Version `0.9.8-12` becomes `0.9.9-0` which in turn becomes `1.0.0-0`.
