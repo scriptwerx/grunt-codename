@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2013 scriptwerx
  * Licensed under the MIT license.
- * @version 0.0.9 "Perseus Amber" (Zokor)
+ * @version 0.1.0 "Bronze Marklar"
  */
 
 /* jslint todo: true, white: true */

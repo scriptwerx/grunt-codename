@@ -1,6 +1,6 @@
 # [grunt-codename](id:mainTitle)
 
-Utility to include a codename for your application based on version (up-to v5.X.X-X).
+Utility to include a codename for your application based on version (up-to v10.X.X-X).
 
 This works great alongside version bump utility: [grunt-bumpx][] for keeping your version numbers and names up-to-date with each build.
 
@@ -24,7 +24,7 @@ grunt.loadNpmTasks('grunt-codename');
 
 The project follows the [SemVer][] guidelines for version numbers; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
-**N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field (and major to only 5) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
+**N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for minor and patch of the *version* field (and major up to 10) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ## The "codename" task
 
@@ -46,7 +46,7 @@ grunt.initConfig({
 
 **codename** allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file **must** have a `version` field compliant to [SemVer][] guidelines; specifically following: `1.2.3-1` being `MAJOR.MINOR.PATCH-BUILD`.
 
-**Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for major, minor and patch of the *version* field (and major to only 5) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
+**Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for minor and patch of the *version* field (and major up to 10) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!**
 
 ### Example JSON
 
@@ -130,6 +130,12 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 ## Changelog
 
 Changes, bug fixes and enhancements made to grunt-codename.
+
+### grunt-codename v0.1.0
+
+**"Bronze Marklar"**
+
+* [ENHANCEMENT] Included codenames up to v10.X.X-X.
 
 ### grunt-codename v0.0.9
 
