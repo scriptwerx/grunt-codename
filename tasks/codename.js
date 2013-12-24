@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2013 scriptwerx
  * Licensed under the MIT license.
- * @version 0.0.8 "Perseus Amber" (Balbul)
+ * @version 0.0.9 "Perseus Amber" (Zokor)
  */
 
 /* jslint todo: true, white: true */
@@ -25,7 +25,9 @@ module.exports = function (grunt) {
 
 	function getVersionData (p_version) {
 		versionData = p_version.split (".");
-		versionData.push (versionData.pop ().split ("-")[0]);
+		var split = versionData.pop ().split ("-");
+		versionData.push (split[0]);
+		versionData.push (split[1]);
 	}
 
 	/**

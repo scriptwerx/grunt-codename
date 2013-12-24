@@ -131,6 +131,12 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.0.9
+
+**"Perseus Amber" (Zokor)**
+
+* [BUGFIX] Fixed issue with incorrect version data.
+
 ### grunt-codename v0.0.8
 
 **"Perseus Amber" (Balbul)**

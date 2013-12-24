@@ -1,9 +1,9 @@
 {
 	"name": "grunt-codename",
 	"description": "Utility to include a codename for your application based on version.",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"codename": "Perseus Amber",
-	"patchName": "Balbul",
+	"patchName": "Zokor",
 	"homepage": "https://github.com/scriptwerx/grunt-codename",
 	"author": {
 		"name": "Paul Massey",
