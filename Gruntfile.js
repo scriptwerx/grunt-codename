@@ -42,13 +42,13 @@ module.exports = function (grunt)
 			},
 			patch: {
 				options: {
-					part: autoBump ("patch", pkg)
+					part: autoBump ("patch")
 				},
 				src: [testJSON]
 			},
 			minor: {
 				options: {
-					part: autoBump ("minor", pkg)
+					part: autoBump ("minor")
 				},
 				src: [testJSON]
 			},

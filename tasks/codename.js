@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2013 scriptwerx
  * Licensed under the MIT license.
- * @version 0.0.7 "Perseus Amber" (Malbrouck)
+ * @version 0.0.8 "Perseus Amber" (Balbul)
  */
 
 /* jslint todo: true, white: true */
@@ -105,11 +105,12 @@ module.exports = function (grunt) {
 					newName = getCodeName (f.version),
 					oldPatchName = f.patchName,
 					patchName = getPatchName (f.version),
-					patchUpdated = false;
+					patchUpdated = false,
+					nameUpdated = false;
 
 				if (oldName !== newName) {
 					f.codename = newName;
-					writeFile = true;
+					writeFile = nameUpdated = true;
 				}
 
 				if (oldPatchName !== patchName) {
@@ -119,14 +120,13 @@ module.exports = function (grunt) {
 
 				if (writeFile) {
 					grunt.file.write (filepath, JSON.stringify (f, null, 4));
-					grunt.log.writeln ("Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"");
-					if (patchUpdated) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\"");
 				}
-				else
-				{
-					grunt.log.writeln ("Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"");
-					if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" correct as \"" + f.patchName.green + "\"");
-				}
+
+				if (nameUpdated) grunt.log.writeln ("Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"");
+				else grunt.log.writeln ("Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"");
+
+				if (patchUpdated) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\"");
+				else if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" correct as \"" + f.patchName.green + "\"");
 			}
 			catch (e) {
 				grunt.verbose.error ();

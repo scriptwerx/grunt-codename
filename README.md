@@ -131,12 +131,18 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.0.8
+
+**"Perseus Amber" (Balbul)**
+
+* [BUGFIX] Fixed issue that displayed incorrect messages within the GruntJS log output.
+* [BUGFIX] Removed incorrect code from the included GruntFile.js for demonstration purposes.
+
 ### grunt-codename v0.0.7
 
 **"Perseus Amber" (Malbrouck)**
 
 * [BUGFIX] Fixed issue that caused *patchName* to stop functioning correctly.
-
 
 ### grunt-codename v0.0.6
 
