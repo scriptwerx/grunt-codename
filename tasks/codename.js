@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 	/**
 	 * Breaks up the version string parameter in order to separate major, minor, patch and build.
 	 * @param p_version
-	 * @returns {array}
+	 * @returns {Array}
 	 */
 
 	function getVersionData (p_version) {
