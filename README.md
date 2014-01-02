@@ -131,6 +131,15 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.1.2
+
+**"Bronze Marklar" (Ithomiid)**
+
+* [ENHANCEMENT] Updated codename JSON to break apart codenames for future development/simplify editing.
+	* [ENHANCEMENT] Updated code to use the new JSON structure.
+* [ENHANCEMENT] Code name error checking implemented - will now throw an error if codename is not found for the given version string.
+* [ENHANCEMENT] Cleaned up **getCodeName** and **getPatchName** methods.
+
 ### grunt-codename v0.1.1
 
 **"Bronze Marklar" (Saiga)**

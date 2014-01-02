@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2014 scriptwerx
  * Licensed under the MIT license.
- * @version 0.1.1 "Bronze Marklar" (Saiga)
+ * @version 0.1.2 "Bronze Marklar" (Ithomiid)
  */
 
 /* jslint todo: true, white: true */
@@ -35,16 +35,9 @@ module.exports = function (grunt) {
 	 */
 
 	function getCodeName (p_version) {
-
 		var versionData = getVersionData (p_version),
-			codeName = "";
-
-		for (var i in codeNames)
-		{
-			if (codeNames.hasOwnProperty (i) && (versionData[0] + "." + versionData[1]) === i) codeName = codeNames[i];
-		}
-
-		return codeName;
+			major = codeNames.hasOwnProperty (versionData[0]) ? codeNames[versionData[0]] : undefined;
+		return major !== undefined && major.hasOwnProperty (versionData[1]) ? major[versionData[1]] : "";
 	}
 
 	/**
@@ -54,16 +47,8 @@ module.exports = function (grunt) {
 	 */
 
 	function getPatchName (p_version) {
-
-		var versionData = getVersionData (p_version),
-			patchName = "";
-
-		for (var i in patchNames)
-		{
-			if (patchNames.hasOwnProperty (i) && versionData[2] === i) patchName = patchNames[i];
-		}
-
-		return patchName;
+		var versionData = getVersionData (p_version);
+		return patchNames.hasOwnProperty (versionData[2]) ? patchNames[versionData[2]] : "";
 	}
 
 	/**
@@ -103,6 +88,13 @@ module.exports = function (grunt) {
 					patchName = options.patch ? getPatchName (f.version) : "",
 					patchUpdated = false,
 					nameUpdated = false;
+
+				if (newName === "") {
+					grunt.verbose.error ();
+					grunt.verbose.error ("Codename not found.");
+					grunt.fail.warn ("Codename not found for version: " + f.version);
+					return;
+				}
 
 				if (oldName !== newName) {
 					f.codename = newName;
