@@ -236,5 +236,5 @@ ___
 [LICENSE]: https://github.com/scriptwerx/grunt-codename/blob/master/LICENSE-MIT
 [codenamegenerator.com]: http://www.codenamegenerator.com
 
-
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/96aa696085e74ad45d69615070f047d1 "githalytics.com")](http://githalytics.com/scriptwerx/grunt-codename)
 

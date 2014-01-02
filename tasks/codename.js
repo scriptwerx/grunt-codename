@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2014 scriptwerx
  * Licensed under the MIT license.
- * @version 0.1.2 "Bronze Marklar" (Ithomiid)
+ * @version 0.1.3 "Bronze Marklar" (Pangolin)
  */
 
 /* jslint todo: true, white: true */
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
 
 		this.filesSrc.forEach (function (filepath) {
 
-			grunt.verbose.writeln ("Injecting codename into: " + filepath);
+			grunt.verbose.writeln ("Injecting codename into: " + filepath + ".");
 
 			try {
 				var f = grunt.file.readJSON (filepath),
@@ -112,9 +112,7 @@ module.exports = function (grunt) {
 					delete f.patchName;
 				}
 
-				if (writeFile) {
-					grunt.file.write (filepath, JSON.stringify (f, null, 4));
-				}
+				if (writeFile) grunt.file.write (filepath, JSON.stringify (f, null, 4));
 
 				if (nameUpdated) log = "Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"";
 				else log = "Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"";
