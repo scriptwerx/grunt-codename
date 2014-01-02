@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Grunt-codename by scriptwerx</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/scriptwerx/grunt-codename">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/scriptwerx/grunt-codename/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/scriptwerx/grunt-codename/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Grunt-codename</h1>
+          <p>Utility to include a codename for your application based on version.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/scriptwerx">scriptwerx</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="grunt-codename" class="anchor" href="#grunt-codename"><span class="octicon octicon-link"></span></a><a>grunt-codename</a>
+</h1>
+
+<p>Utility to include a codename for your application based on version (up-to v10.X.X-X).</p>
+
+<p>This works great alongside version bump utility: <a href="https://github.com/Ragnarokkr/grunt-bumpx/">grunt-bumpx</a> for keeping your version numbers and names up-to-date with each build.</p>
+
+<p>Included codenames and patchNames created with the help of the excellent <a href="http://www.codenamegenerator.com">codenamegenerator.com</a> website.</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
+
+<p>This plugin requires Grunt <code>~0.4.1</code></p>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
+
+<pre lang="shell"><code>npm install grunt-codename --save-dev
+</code></pre>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-codename'</span><span class="p">);</span>
+</pre></div>
+
+<p>The project follows the <a href="http://semver.org/">SemVer</a> guidelines for version numbers; specifically following: <code>1.2.3-1</code> being <code>MAJOR.MINOR.PATCH-BUILD</code>.</p>
+
+<p><strong>N.B. The supplied codenames and patchNames only include suport for single-digit numbers used for minor and patch of the <em>version</em> field (and major up to 10) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!</strong></p>
+
+<h2>
+<a name="the-codename-task" class="anchor" href="#the-codename-task"><span class="octicon octicon-link"></span></a>The "codename" task</h2>
+
+<h3>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>In your project's Gruntfile, add a section named <code>codename</code> to the data object passed into <code>grunt.initConfig()</code>.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">codename</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">// Task-specific options go here.</span>
+        <span class="p">},</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="p">[</span>
+            <span class="c1">// Target-specific files go here.</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+<p><strong>codename</strong> allows to set the codename and patchName based on the version number of the configuration files (package.json, manifest.json, etc.) in your project. Only JSON files are supported, and each file <strong>must</strong> have a <code>version</code> field compliant to <a href="http://semver.org/">SemVer</a> guidelines; specifically following: <code>1.2.3-1</code> being <code>MAJOR.MINOR.PATCH-BUILD</code>.</p>
+
+<p><strong>Remember: The supplied codenames and patchNames only include suport for single-digit numbers used for minor and patch of the <em>version</em> field (and major up to 10) - you must supply your own custom codenames and patchNames if you can't handle this restriction (but that's a lot of names)!</strong></p>
+
+<h3>
+<a name="example-json" class="anchor" href="#example-json"><span class="octicon octicon-link"></span></a>Example JSON</h3>
+
+<p><strong>codename</strong> is designed to update your <em>package.json</em>, <em>manifest.json</em> or any other JSON file with a <em>"version"</em> field (configured as noted above).</p>
+
+<p>An example of a <em>manifest.json</em> file is below:</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>
+    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"My Test Application"</span><span class="p">,</span>
+    <span class="nt">"version"</span><span class="p">:</span> <span class="s2">"1.3.2-16"</span><span class="p">,</span>
+    <span class="nt">"codename"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"patchName"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"A test application for me."</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Once <strong>codename</strong> has been used (with patchNames enabled); the <em>manifest.json</em> file would be updated automatically as follows:</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>
+    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"My Test Application"</span><span class="p">,</span>
+    <span class="nt">"version"</span><span class="p">:</span> <span class="s2">"1.3.2-16"</span><span class="p">,</span>
+    <span class="nt">"codename"</span><span class="p">:</span> <span class="s2">"Honiara Nimitz"</span><span class="p">,</span>
+    <span class="nt">"patchName"</span><span class="p">:</span> <span class="s2">"Ithomiid"</span><span class="p">,</span>
+    <span class="nt">"description"</span><span class="p">:</span> <span class="s2">"A test application for me."</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<table>
+<thead><tr>
+<th>options.*</th>
+<th align="center">Type</th>
+<th align="center">Default</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>patch</td>
+<td align="center"><code>Boolean</code></td>
+<td align="center"><code>false</code></td>
+<td>Generate a name for the <em>patch</em> version as well as the main codename.</td>
+</tr>
+<tr>
+<td>data</td>
+<td align="center"><code>JSON</code></td>
+<td align="center"><code>undefined</code></td>
+<td>Use custom JSON for the codenames (and patchNames as required).</td>
+</tr>
+<tr>
+<td>codenames</td>
+<td align="center"><code>Object</code></td>
+<td align="center"><code>undefined</code></td>
+<td>Use a custom object for codenames.</td>
+</tr>
+<tr>
+<td>patchNames</td>
+<td align="center"><code>Object</code></td>
+<td align="center"><code>undefined</code></td>
+<td>Use a custom object for patchNames.</td>
+</tr>
+</tbody>
+</table><h4>
+<a name="default-options" class="anchor" href="#default-options"><span class="octicon octicon-link"></span></a>Default Options</h4>
+
+<p>Running the task in this way, the <code>codename</code> field of each source file will be automatically changed to the correct codename for the build release.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">codename</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">"package.json"</span><span class="p">,</span> <span class="s2">"manifest.json"</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+<h4>
+<a name="custom-options" class="anchor" href="#custom-options"><span class="octicon octicon-link"></span></a>Custom Options</h4>
+
+<p>Running the task in this way, the <code>codename</code> and <code>patchName</code> fields of each traget file will be changed to the correct codename and patchName for the next minor release based on the names contained within the user-supplied <em>codenames.json</em> file.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">codename</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">patch</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">data</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span> <span class="p">(</span><span class="s2">"codenames.json"</span><span class="p">)</span>
+        <span class="p">},</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">"package.json"</span><span class="p">,</span> <span class="s2">"manifest.json"</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Any contribution to improve the project and/or expand it is welcome.</p>
+
+<p>If you're interested in contributing to this project, take care to maintain the existing coding style.</p>
+
+<p>To contribute:</p>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol><p>Add unit tests for any new or changed functionality. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p>Changes, bug fixes and enhancements made to grunt-codename.</p>
+
+<h3>
+<a name="grunt-codename-v012" class="anchor" href="#grunt-codename-v012"><span class="octicon octicon-link"></span></a>grunt-codename v0.1.2</h3>
+
+<p><strong>"Bronze Marklar" (Ithomiid)</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Updated codename JSON to break apart codenames for future development/simplify editing.
+
+<ul>
+<li>[ENHANCEMENT] Updated code to use the new JSON structure.</li>
+</ul>
+</li>
+<li>[ENHANCEMENT] Code name error checking implemented - will now throw an error if codename is not found for the given version string.</li>
+<li>[ENHANCEMENT] Cleaned up <strong>getCodeName</strong> and <strong>getPatchName</strong> methods.</li>
+</ul><h3>
+<a name="grunt-codename-v011" class="anchor" href="#grunt-codename-v011"><span class="octicon octicon-link"></span></a>grunt-codename v0.1.1</h3>
+
+<p><strong>"Bronze Marklar" (Saiga)</strong></p>
+
+<ul>
+<li>[BUGFIX] Fixed issue where patchName would be written even if not required.</li>
+<li>[FEATURE] If patchName is not required it is removed (if present) from the JSON file.
+
+<ul>
+<li>[ENHANCEMENT] Grunt log will correctly reflect this.</li>
+</ul>
+</li>
+<li>[ENHANCEMENT] Updated comments within <strong>codename.js</strong>.</li>
+<li>[ENHANCEMENT] Minor code cleanup and year references updated to 2014.</li>
+</ul><h3>
+<a name="grunt-codename-v010" class="anchor" href="#grunt-codename-v010"><span class="octicon octicon-link"></span></a>grunt-codename v0.1.0</h3>
+
+<p><strong>"Bronze Marklar"</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Included codenames up to v10.X.X-X.</li>
+</ul><h3>
+<a name="grunt-codename-v009" class="anchor" href="#grunt-codename-v009"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.9</h3>
+
+<p><strong>"Perseus Amber" (Zokor)</strong></p>
+
+<ul>
+<li>[BUGFIX] Fixed issue with incorrect version data.</li>
+</ul><h3>
+<a name="grunt-codename-v008" class="anchor" href="#grunt-codename-v008"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.8</h3>
+
+<p><strong>"Perseus Amber" (Balbul)</strong></p>
+
+<ul>
+<li>[BUGFIX] Fixed issue that displayed incorrect messages within the GruntJS log output.</li>
+<li>[BUGFIX] Removed incorrect code from the included GruntFile.js for demonstration purposes.</li>
+</ul><h3>
+<a name="grunt-codename-v007" class="anchor" href="#grunt-codename-v007"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.7</h3>
+
+<p><strong>"Perseus Amber" (Malbrouck)</strong></p>
+
+<ul>
+<li>[BUGFIX] Fixed issue that caused <em>patchName</em> to stop functioning correctly.</li>
+</ul><h3>
+<a name="grunt-codename-v006" class="anchor" href="#grunt-codename-v006"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.6</h3>
+
+<p><strong>"Perseus Amber" (Anoa)</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Updated this documentation a little to make the current version restrictions clear.</li>
+<li>[ENHANCEMENT] Updated the demo <em>GruntFile.js</em> (included) to demonstrate our own <em>autoBump</em> method which ensures that single-digit bump occurs when using the utility.
+
+<ul>
+<li>When using the configuration as per our demo <em>GruntFile.js</em> bumping the <em>patch</em> part of the version will automatically switch to the <em>minor</em> part of the version and in-turn the <em>major</em> part of the version. For example (always bumping <em>patch</em>):
+
+<ul>
+<li>Version <code>0.8.8-12</code> becomes <code>0.8.9-0</code> which in turn becomes <code>0.9.0-0</code>.</li>
+<li>Version <code>0.9.8-12</code> becomes <code>0.9.9-0</code> which in turn becomes <code>1.0.0-0</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p>For more information, please see the included <a href="https://github.com/scriptwerx/grunt-codename/blob/master/Gruntfile.js">GruntFile.js</a>.</p>
+
+<h3>
+<a name="grunt-codename-v005" class="anchor" href="#grunt-codename-v005"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.5</h3>
+
+<p><strong>"Perseus Amber" (Uromastix)</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Included this <em>README.md</em>.</li>
+<li>[ENHANCEMENT] Updated documentation.</li>
+</ul><h3>
+<a name="grunt-codename-v004" class="anchor" href="#grunt-codename-v004"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.4</h3>
+
+<p><strong>"Perseus Amber" (Tayra)</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Included this <em>README.md</em>.</li>
+<li>[ENHANCEMENT] Updated documentation.</li>
+</ul><h3>
+<a name="grunt-codename-v003" class="anchor" href="#grunt-codename-v003"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.3</h3>
+
+<p><strong>"Perseus Amber" (Pangolin)</strong></p>
+
+<ul>
+<li>[ENHANCEMENT] Moved codenames and patchNames to external JSON file.</li>
+<li>[FEATURE] Added options to allow for better configuration.</li>
+</ul><h3>
+<a name="grunt-codename-v002" class="anchor" href="#grunt-codename-v002"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.2</h3>
+
+<p><strong>"Perseus Amber" (Ithomiid)</strong></p>
+
+<ul>
+<li>[BUGFIX] Fixed issue with codename.</li>
+</ul><h3>
+<a name="grunt-codename-v001" class="anchor" href="#grunt-codename-v001"><span class="octicon octicon-link"></span></a>grunt-codename v0.0.1</h3>
+
+<p><strong>"Perseus Amber" (Saiga)</strong></p>
+
+<ul>
+<li>Initial commit.</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>See the <a href="https://github.com/scriptwerx/grunt-codename/blob/master/LICENSE-MIT">LICENSE</a> distributed with the project.</p>
+
+<p> </p>
+
+<hr>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-30660100-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
