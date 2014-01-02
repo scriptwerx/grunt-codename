@@ -59,6 +59,7 @@ module.exports = function (grunt) {
 
 		var path = require ("path"),
 			data = grunt.file.readJSON (path.join (__dirname, "/codeNameData.json")),
+			log,
 			options = this.options ({
 				patch: false,
 				data: undefined,
@@ -115,14 +116,16 @@ module.exports = function (grunt) {
 					grunt.file.write (filepath, JSON.stringify (f, null, 4));
 				}
 
-				if (nameUpdated) grunt.log.writeln ("Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"");
-				else grunt.log.writeln ("Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"");
+				if (nameUpdated) log = "Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"";
+				else log = "Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"";
 
 				if (patchUpdated) {
-					if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\"");
-					else grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" removed.");
+					if (options.patch) log = log + ", patchName changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\".";
+					else log = log + ", patchName removed.";
 				}
-				else if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" correct as \"" + f.patchName.green + "\"");
+				else if (options.patch) log = log + ", patchName correct as \"" + f.patchName.green + "\".";
+
+				grunt.log.writeln (log);
 			}
 			catch (e) {
 				grunt.verbose.error ();
