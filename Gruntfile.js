@@ -1,6 +1,6 @@
 /*
 * GruntFile.js example.
-* 
+*
 * grunt-codename
 * https://github.com/scriptwerx/grunt-codename
 *
@@ -8,10 +8,15 @@
 * Licensed under the MIT license.
 */
 
+/* jslint todo: true, white: true */
+/* global module */
+
 var testJSON = "test.json";
 
 module.exports = function (grunt)
 {
+	"use strict";
+
 	/**
 	 * Ensures single-digit bump occurs
 	 * @param part
@@ -21,13 +26,13 @@ module.exports = function (grunt)
 	function autoBump (part) {
 
 		if (part === "build") return ["bump:" + part];
-		
+
 		var pkg = grunt.file.readJSON (testJSON),
 			versionData = pkg.version.split (".");
-		
+
 		if (part === "patch" && parseInt (versionData[2], 10) + 1 >= 10) part = "minor";
 		if (part === "minor" && parseInt (versionData[1], 10) + 1 >= 10) part = "major";
-		
+
 		return part;
 	}
 
