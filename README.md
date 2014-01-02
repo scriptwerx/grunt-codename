@@ -131,6 +131,16 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 
 Changes, bug fixes and enhancements made to grunt-codename.
 
+### grunt-codename v0.1.1
+
+**"Bronze Marklar" (Saiga)**
+
+* [BUGFIX] Fixed issue where patchName would be written even if not required.
+* [FEATURE] If patchName is not required it is removed (if present) from the JSON file.
+	* [ENHANCEMENT] Grunt log will correctly reflect this.
+* [ENHANCEMENT] Updated comments within **codename.js**.
+* [ENHANCEMENT] Minor code cleanup and year references updated to 2014.
+
 ### grunt-codename v0.1.0
 
 **"Bronze Marklar"**

@@ -2,45 +2,42 @@
  * grunt-codename
  * https://github.com/scriptwerx/grunt-codename
  *
- * Copyright (c) 2013 scriptwerx
+ * Copyright (c) 2014 scriptwerx
  * Licensed under the MIT license.
- * @version 0.1.0 "Bronze Marklar"
+ * @version 0.1.1 "Bronze Marklar" (Saiga)
  */
 
 /* jslint todo: true, white: true */
-/* global module, require */
+/* global module, require, __dirname */
 
 module.exports = function (grunt) {
 
 	"use strict";
 
 	var codeNames,
-		patchNames,
-		versionData;
+		patchNames;
 
 	/**
-	 *
+	 * Breaks up the version string parameter in order to separate major, minor, patch and build.
 	 * @param p_version
+	 * @returns {array}
 	 */
 
 	function getVersionData (p_version) {
-		versionData = p_version.split (".");
-		var split = versionData.pop ().split ("-");
-		versionData.push (split[0]);
-		versionData.push (split[1]);
+		var versionData = p_version.split (".");
+		return versionData.concat (versionData.pop ().split ("-"));
 	}
 
 	/**
-	 *
+	 * Returns the relevant codename based on the version string parameter.
 	 * @param p_version
 	 * @returns {string}
 	 */
 
-	function getCodeName (p_version)
-	{
-		getVersionData (p_version);
+	function getCodeName (p_version) {
 
-		var codeName = "";
+		var versionData = getVersionData (p_version),
+			codeName = "";
 
 		for (var i in codeNames)
 		{
@@ -51,16 +48,15 @@ module.exports = function (grunt) {
 	}
 
 	/**
-	 *
+	 * Returns the relevant patch name based on the version string parameter.
 	 * @param p_version
 	 * @returns {string}
 	 */
 
-	function getPatchName (p_version)
-	{
-		getVersionData (p_version);
+	function getPatchName (p_version) {
 
-		var patchName = "";
+		var versionData = getVersionData (p_version),
+			patchName = "";
 
 		for (var i in patchNames)
 		{
@@ -71,7 +67,7 @@ module.exports = function (grunt) {
 	}
 
 	/**
-	 * Register
+	 * Register the grunt task "codename"
 	 */
 
 	grunt.registerMultiTask ("codename", 'Deliver application codename based on version.', function () {
@@ -85,13 +81,11 @@ module.exports = function (grunt) {
 				codenames: undefined
 			});
 
-		if (options.data !== undefined)
-		{
+		if (options.data !== undefined) {
 			if (options.data.hasOwnProperty ("codeNames")) codeNames = options.data.codeNames;
 			if (options.data.hasOwnProperty ("patchNames")) patchNames = options.data.patchNames;
 		}
-		else
-		{
+		else {
 			codeNames = (options.codenames !== undefined) ? options.codenames : data.codeNames;
 			patchNames = (options.patchNames !== undefined) ? options.patchNames : data.patchNames;
 		}
@@ -105,8 +99,8 @@ module.exports = function (grunt) {
 					writeFile = false,
 					oldName = f.codename,
 					newName = getCodeName (f.version),
-					oldPatchName = f.patchName,
-					patchName = getPatchName (f.version),
+					oldPatchName = f.patchName ? f.patchName : "",
+					patchName = options.patch ? getPatchName (f.version) : "",
 					patchUpdated = false,
 					nameUpdated = false;
 
@@ -120,6 +114,11 @@ module.exports = function (grunt) {
 					writeFile = patchUpdated = true;
 				}
 
+				if (!options.patch && f.hasOwnProperty ("patchName")) {
+					writeFile = true;
+					delete f.patchName;
+				}
+
 				if (writeFile) {
 					grunt.file.write (filepath, JSON.stringify (f, null, 4));
 				}
@@ -127,7 +126,10 @@ module.exports = function (grunt) {
 				if (nameUpdated) grunt.log.writeln ("Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"");
 				else grunt.log.writeln ("Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"");
 
-				if (patchUpdated) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\"");
+				if (patchUpdated) {
+					if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" changed from \"" + oldPatchName + "\" to \"" + patchName.cyan + "\"");
+					else grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" removed.");
+				}
 				else if (options.patch) grunt.log.writeln ("Codename (patchName) in \"" + filepath + "\" correct as \"" + f.patchName.green + "\"");
 			}
 			catch (e) {

@@ -4,7 +4,7 @@
 * grunt-codename
 * https://github.com/scriptwerx/grunt-codename
 *
-* Copyright (c) 2013 scriptwerx
+* Copyright (c) 2014 scriptwerx
 * Licensed under the MIT license.
 */
 
