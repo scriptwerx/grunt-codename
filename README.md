@@ -1,5 +1,7 @@
 # [grunt-codename](id:mainTitle)
 
+![Progress](http://progressed.io/bar/100)
+
 Utility to include a codename for your application based on version (up-to v10.X.X-X).
 
 This works great alongside version bump utility: [grunt-bumpx][] for keeping your version numbers and names up-to-date with each build.
