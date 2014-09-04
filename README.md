@@ -1,7 +1,6 @@
 # [grunt-codename](id:mainTitle)
 
-# grunt-bumpx [![GitHub version][badge-github-version-image] ][badge-github-version-url] [![Built with Grunt][badge-grunt-image] ][badge-grunt-url]
-> Extended bump version number
+# [![GitHub version][badge-github-version-image] ][badge-npm-url] [![Built with Grunt][badge-grunt-image] ][badge-grunt-url]
 
 ![Progress](http://progressed.io/bar/100)
 
@@ -235,8 +234,7 @@ See the [LICENSE][] distributed with the project.
 &nbsp;
 ___
 
-[badge-github-version-image]: https://badge.fury.io/gh/ragnarokkr%2Fgrunt-codename.png
-[badge-github-version-url]: http://badge.fury.io/gh/ragnarokkr%2Fgrunt-codename
+[badge-github-version-image]: https://badge.fury.io/js/grunt-codename.svg
 [badge-grunt-image]: https://cdn.gruntjs.com/builtwith.png
 [badge-grunt-url]: http://gruntjs.com/
 [badge-npm-image]: https://nodei.co/npm/grunt-codename.png?downloads=true
