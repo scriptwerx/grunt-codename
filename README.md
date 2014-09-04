@@ -2,6 +2,8 @@
 
 ![Progress](http://progressed.io/bar/100)
 
+[![NPM][badge-npm-image]][badge-npm-url]
+
 Utility to include a codename for your application based on version (up-to v10.X.X-X).
 
 This works great alongside version bump utility: [grunt-bumpx][] for keeping your version numbers and names up-to-date with each build.
@@ -230,6 +232,8 @@ See the [LICENSE][] distributed with the project.
 &nbsp;
 ___
 
+[badge-npm-image]: https://nodei.co/npm/grunt-codename.png?downloads=true
+[badge-npm-url]: https://npmjs.org/package/grunt-codename
 [grunt]: http://gruntjs.com/
 [GruntFile]: http://gruntjs.com/sample-gruntfile
 [Getting Started]: http://gruntjs.com/getting-started
