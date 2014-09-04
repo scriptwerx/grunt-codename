@@ -1,8 +1,4 @@
-# [grunt-codename](id:mainTitle)
-
-# Grunt Codename [![GitHub version][badge-github-version-image] ][badge-npm-url] [![Built with Grunt][badge-grunt-image] ][badge-grunt-url]
-
-![Progress](http://progressed.io/bar/100)
+# [grunt-codename](id:mainTitle) [![GitHub version][badge-github-version-image] ][badge-npm-url] [![Built with Grunt][badge-grunt-image] ][badge-grunt-url] ![Progress](http://progressed.io/bar/100)
 
 [![NPM][badge-npm-image]][badge-npm-url]
 
