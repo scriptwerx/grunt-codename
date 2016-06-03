@@ -61,6 +61,8 @@ module.exports = function (grunt) {
 			data = grunt.file.readJSON (path.join (__dirname, "/codeNameData.json")),
 			log,
 			options = this.options ({
+				tabSize: 4,
+				hardTab: false,
 				patch: false,
 				data: undefined,
 				patchNames: undefined,
@@ -88,7 +90,8 @@ module.exports = function (grunt) {
 					oldPatchName = f.patchName ? f.patchName : "",
 					patchName = options.patch ? getPatchName (f.version) : "",
 					patchUpdated = false,
-					nameUpdated = false;
+					nameUpdated = false,
+					filler = options.hardTab === true ? '\t' : parseInt(0 + options.tabSize);
 
 				if (newName === "") {
 					grunt.verbose.error ();
@@ -112,7 +115,7 @@ module.exports = function (grunt) {
 					delete f.patchName;
 				}
 
-				if (writeFile) grunt.file.write (filepath, JSON.stringify (f, null, 4));
+				if (writeFile) grunt.file.write (filepath, JSON.stringify (f, null, filler));
 
 				if (nameUpdated) log = "Codename in \"" + filepath + "\" changed from \"" + oldName +"\" to \"" + newName.cyan + "\"";
 				else log = "Codename in \"" + filepath + "\" correct as \"" + f.codename.green + "\"";
