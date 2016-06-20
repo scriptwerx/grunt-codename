@@ -1,9 +1,9 @@
 {
 	"name": "grunt-codename",
 	"description": "Utility to include a codename for your application based on version.",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"codename": "Bronze Marklar",
-	"patchName": "Pangolin",
+	"patchName": "Tayra",
 	"homepage": "https://github.com/scriptwerx/grunt-codename",
 	"author": {
 		"name": "Paul Massey",
@@ -25,13 +25,14 @@
 	],
 	"main": "Gruntfile.js",
 	"engines": {
-		"node": ">= 0.8.0"
+		"node": ">=4.4.5"
 	},
 	"scripts": {
-		"test": "grunt test"
+		"start": "grunt"
 	},
+    "dependencies": {},
 	"peerDependencies": {
-		"grunt": ">=0.4.0"
+		"grunt": "~1.0.1"
 	},
 	"devDependencies": {
 		"grunt": "~1.0.1",
@@ -46,6 +47,5 @@
 		"version",
 		"number",
 		"codename"
-	],
-	"dependencies": {}
+	]
 }

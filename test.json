@@ -1,7 +1,7 @@
 {
-	"name": "My Test Application",
-	"version": "0.1.2-0",
-	"codename": "",
-	"patchName": "",
-	"description": "A test application for me."
+  "name": "My Test Application",
+  "version": "0.1.4",
+  "codename": "Bronze Marklar",
+  "patchName": "Tayra",
+  "description": "A test application for me."
 }

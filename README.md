@@ -12,7 +12,7 @@ Included codenames and patchNames created with the help of the excellent [codena
 
 ## Getting started
 
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `~1.0.1`
 
 If you haven't used [Grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [Gruntfile][] as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -134,6 +134,20 @@ Add unit tests for any new or changed functionality. Lint and test your code usi
 ## Changelog
 
 Changes, bug fixes and enhancements made to grunt-codename.
+
+### grunt-codename v0.1.4
+
+**"Bronze Marklar" (Tayra)**
+
+* [FEATURE] Merged pull request to allow support for tabSize/hardTab
+* [ENHANCEMENT] Updated dependencies
+
+### grunt-codename v0.1.3
+
+**"Bronze Marklar" (Pangolin)**
+
+* [ENHANCEMENT] Maintenance release
+* [ENHANCEMENT] Updated peerDependencies to support Grunt 1.0
 
 ### grunt-codename v0.1.2
 
